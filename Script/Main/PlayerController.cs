@@ -10,9 +10,8 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private bool jump = true;
     private float walkForce = 25.0f;
-    private float macSpeed = 5.3f;
-
-   
+    private float macSpeed = 5.0f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -69,8 +68,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "DeadArea")
         {
-            SceneManager.LoadScene("DeadScene");
-           
+            SceneManager.LoadScene("DeadScene");  
         }
        
     }

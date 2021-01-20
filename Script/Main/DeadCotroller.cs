@@ -10,7 +10,7 @@ public class DeadCotroller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        deadArea = GameObject.Find("DeadArea");
+        deadArea = this.gameObject;
     }
 
     // Update is called once per frame

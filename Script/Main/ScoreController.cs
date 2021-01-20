@@ -6,11 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class ScoreController : MonoBehaviour
 {
-    public Text ScoreText;
-    public int score=0;
+    [SerializeField]
+    private Text ScoreText;
+    private int score=0;
+    private PlayerManager playerManager;
     // Start is called before the first frame update
     void Start()
     {
+        playerManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
+        playerManager.SetGameScore(0);
         ScoreChange();
     }
 
@@ -33,6 +37,6 @@ public class ScoreController : MonoBehaviour
     private void ScoreChange()
     {
         ScoreText.text = "Score:" + score;
-        PlayerPrefs.SetInt("Score1", score);
+        playerManager.SetGameScore(score);
     }
 }
